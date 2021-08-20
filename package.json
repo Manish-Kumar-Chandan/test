@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server/server.js",
+    "backend": "node server/server.js",
     "server": "nodemon  server/server.js --watch server",
     "client": "npm run start --prefix client",
     "admin": "npm run start --prefix admin",
     "dev": "concurrently \"npm run server\" \"npm run client\"  \"npm run admin\"",
-    "backend": "concurrently -n 'server,client' -c 'red,green' \"npm run server\" \"npm run admin\""
+    "start": "concurrently -n 'server,client' -c 'red,green' \"npm run server\" \"npm run admin\""
   },
   "repository": {
     "type": "git",
