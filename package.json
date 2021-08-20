@@ -41,9 +41,7 @@
     "mysql2": "^2.3.0",
     "react-search-box": "^2.0.2",
     "sequelize": "^6.6.5",
-    "validatorjs": "^3.22.1"
-  },
-  "devDependencies": {
+    "validatorjs": "^3.22.1",
     "nodemon": "^2.0.2"
   },
   "engines": {
