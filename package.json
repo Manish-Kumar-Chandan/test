@@ -10,7 +10,7 @@
     "client": "npm run start --prefix client",
     "admin": "npm run start --prefix admin",
     "dev": "concurrently \"npm run server\" \"npm run client\"  \"npm run admin\"",
-    "start": "npm i -g react-scripts"
+    "start": "concurrently -n 'server,client' -c 'red,green' \"npm run server\" \"npm run admin\""
   },
   "repository": {
     "type": "git",
