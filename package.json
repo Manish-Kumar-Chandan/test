@@ -1,0 +1,52 @@
+{
+  "name": "server-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js",
+    "server": "nodemon  server/server.js --watch server",
+    "client": "npm run start --prefix client",
+    "admin": "npm run start --prefix admin",
+    "dev": "concurrently \"npm run server\" \"npm run client\"  \"npm run admin\"",
+    "backend": "concurrently -n 'server,client' -c 'red,green' \"npm run server\" \"npm run admin\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mehmeterdemdevge/thinkingpedia.git"
+  },
+  "keywords": [],
+  "author": "pardeep889",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mehmeterdemdevge/thinkingpedia/issues"
+  },
+  "homepage": "https://github.com/mehmeterdemdevge/thinkingpedia#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.8",
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.1.0",
+    "cookie-parser": "^1.4.4",
+    "create-error": "^0.3.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "gmail-send": "^1.8.10",
+    "http-status": "^1.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "moment-js": "^1.1.15",
+    "mongoose": "^5.8.11",
+    "morgan": "^1.9.1",
+    "mysql2": "^2.3.0",
+    "react-search-box": "^2.0.2",
+    "sequelize": "^6.6.5",
+    "validatorjs": "^3.22.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "engines": {
+    "node": "14.x"
+  }
+}
