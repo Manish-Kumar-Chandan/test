@@ -11,6 +11,7 @@
     "install-admin": "cd admin && npm install",
     "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix admin && npm run build --prefix admin",
     "heroku-postbuild1": "npm run install-admin && npm run build && npm run admin",
+    "start1":"npm run start --prefix admin",
     "start":"nodemon server/server.js --watch server",
     "client": "npm run start --prefix client",
     "admin": "npm run start --prefix admin",
