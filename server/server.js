@@ -28,6 +28,13 @@ const config = require("./config/config").get(process.env.NODE_ENV);
 app.use(bodyParser.json());
 app.use(cookieParser());
 
+//routes
+app.use("/", require("./routes/user"));
+app.use("/", require("./routes/post"));
+app.use("/", require("./routes/comment"));
+app.use("/api/attributes/", require("./routes/attributes"));
+app.use("/api/add/", require("./routes/chickens"));
+
 // logger
 if (process.env.NODE_ENV === "production") {
   app.use(express.static('admin/build'));
@@ -42,13 +49,6 @@ if (process.env.NODE_ENV === "production") {
     })
   );
 }
-
-//routes
-app.use("/", require("./routes/user"));
-app.use("/", require("./routes/post"));
-app.use("/", require("./routes/comment"));
-app.use("/api/attributes/", require("./routes/attributes"));
-app.use("/api/add/", require("./routes/chickens"));
 
 // Run server
 const port = process.env.PORT || config.PORT;
