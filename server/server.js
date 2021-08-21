@@ -30,6 +30,7 @@ app.use(cookieParser());
 
 // logger
 if (process.env.NODE_ENV === "production") {
+  app.use(express.static('admin/build'));
   app.use(
     morgan("common", {
       stream: fs.createWriteStream(path.join(__dirname, "access.log"), {
