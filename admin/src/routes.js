@@ -28,7 +28,7 @@ const Routes = () => {
   return (
     <Layout>
       <Switch>
-        <Route path="/" exact component={Login} />
+        <Route path="/" exact component={StaticHomePage} />
         <Route path="/admin/beak" exact component={Users} />
         <Route path="/admin/comb" exact component={Auth(Comb, true)} />
         <Route path="/admin/eyes" exact component={Auth(Eyes, true)} />
