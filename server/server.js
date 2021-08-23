@@ -34,16 +34,15 @@ app.use("/", require("./routes/post"));
 app.use("/", require("./routes/comment"));
 app.use("/api/attributes/", require("./routes/attributes"));
 app.use("/api/add/", require("./routes/chickens"));
-app.use(express.static(path.join(__dirname, '../admin/build')));
-app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname,'../admin/build', 'index.html'));
-});
+
+
 // logger
 if (process.env.NODE_ENV === "production") {
-  // app.use(express.static('admin/build'));
-  // app.get('/*', (req, res) => {
-  //   res.sendFile(path.resolve(__dirname, 'admin', 'build', 'index.html')) // relative path
-  // })
+  console.log('productionnnnnnnnnnn')
+  app.use(express.static(path.join(__dirname, '../admin/build')));
+  app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname,'../admin/build', 'index.html'));
+  });
   app.use(
     morgan("common", {
       stream: fs.createWriteStream(path.join(__dirname, "access.log"), {
